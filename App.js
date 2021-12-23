@@ -7,21 +7,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import Home from './screens/Home'
-import ListHome from './screens/ListHome'
-import MapHome from './screens/MapHome'
-import Profile from './screens/profile';
-import Friends from './screens/Friends'
-import VenueDetailsScreen from './screens/VenueDetails';
-import FavoriteBar from './screens/FavoriteBar';
 
 
 const Tab = createBottomTabNavigator();
-
-/*
-* Welcome to the source code of your Ultimate Night Time Guide. Still no name for our company :)
-* This is our first professional attempt at a IOS and android application.
-* I do not know what else to say tbh
-*/
 
 function MyTabs() {
   return (
@@ -30,10 +18,6 @@ function MyTabs() {
      initialRouteName="Home">        
 
     <Stack.Screen name="Home" component= {Home} options={{headerShown: false}}/>
-    <Stack.Screen name="Profile" component= {Profile} options={{headerShown: false}}/>
-    <Stack.Screen name="Friends" component= {Friends} options={{headerShown: false}}/>
-    <Stack.Screen name="VenueDetails" component= {VenueDetailsScreen} options={{headerShown: false}}/> 
-    <Stack.Screen name="FavoriteBar" component= {FavoriteBar} options={{headerShown: false}}/>
 
 
       
@@ -62,7 +46,7 @@ export default function App() {
   >
     <Tab.Screen
       name="Home"
-      component={MyTabs}
+      component={Home}
       options={{
         tabBarLabel: 'Home',
         headerShown: false,
@@ -71,29 +55,6 @@ export default function App() {
         ),
       }}
     />
-     <Tab.Screen
-      name="Friends"
-      component={Friends}
-      options={{
-        tabBarLabel: 'Friends',
-        headerShown: false,
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="account-group" color={color} size={size} />
-        ),
-      }}
-    />
-    <Tab.Screen
-      name="Profile"
-      component={Profile}
-      options={{
-        tabBarLabel: 'Profile',
-        headerShown: false,
-        tabBarIcon: ({ color, size }) => (
-          <MaterialCommunityIcons name="account" color={color} size={size} />
-        ),
-      }}
-    />
-    
   </Tab.Navigator>
 </NavigationContainer>
 );
