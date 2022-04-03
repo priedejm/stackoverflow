@@ -8,11 +8,11 @@ import {
   Dimensions,
   ImageBackground,
 } from 'react-native';
+import BottomSheet from 'reanimated-bottom-sheet';
 
 
 
-
-export default class Home extends React.Component {
+export default class Screen extends React.Component {
 
   render() {
     return (

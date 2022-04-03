@@ -6,7 +6,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import Home from './screens/Home'
+import Screen from './screens/Home'
 
 
 const Tab = createBottomTabNavigator();
@@ -15,9 +15,9 @@ function MyTabs() {
   return (
 
     <Stack.Navigator
-     initialRouteName="Home">        
+     initialRouteName="Screen">        
 
-    <Stack.Screen name="Home" component= {Home} options={{headerShown: false}}/>
+    <Stack.Screen name="Screen" component= {Screen} options={{headerShown: false}}/>
 
 
       
@@ -46,7 +46,7 @@ export default function App() {
   >
     <Tab.Screen
       name="Home"
-      component={Home}
+      component={MyTabs}
       options={{
         tabBarLabel: 'Home',
         headerShown: false,
